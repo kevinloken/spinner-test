@@ -13,9 +13,21 @@
 // HelloWorldLayer
 @interface HelloWorldLayer : CCLayer
 {
+    CCTMXTiledMap* _tileMap;
+    CCTMXLayer* _background;
+    CCSprite* _player;
 }
+
+@property (nonatomic, retain) CCTMXTiledMap *tileMap;
+@property (nonatomic, retain) CCTMXLayer *background;
+@property (nonatomic, retain) CCSprite *player;
 
 // returns a CCScene that contains the HelloWorldLayer as the only child
 +(CCScene *) scene;
+
+-(void)rotateLeft;
+-(void)rotateRight;
+
+-(void)setViewpointCenter:(CGPoint) position;
 
 @end
